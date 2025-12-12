@@ -15,7 +15,7 @@ jobs:
     - name: set up code
       uses: /setup-node@V3
       with:
-        node-version 16
+        node-version: 16
 
     - name: install dependencies
       run: npm install
