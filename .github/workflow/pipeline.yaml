@@ -1,0 +1,24 @@
+name:CI 
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout code
+      uses: action/checkout@V3
+      
+    - name: set up code
+      uses: /setup-node@V3
+      with:
+        node-version 16
+
+    - name: install dependencies
+      run: npm install
+
+    - name:  test
+      run: npm test
